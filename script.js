@@ -299,3 +299,59 @@ function debounce(func, wait) {
     timeout = setTimeout(later, wait);
   };
 }
+
+
+// ============================================
+// EXPERIENCE FILTER
+// ============================================
+
+class ExperienceFilter {
+  constructor() {
+    this.filterSelect = document.getElementById('category-filter');
+    this.experienceList = document.getElementById('experience-list');
+    if (this.filterSelect && this.experienceList) {
+      this.init();
+    }
+  }
+
+  init() {
+    this.filterSelect.addEventListener('change', (e) => this.handleFilterChange(e));
+  }
+
+  handleFilterChange(event) {
+    const selectedCategory = event.target.value;
+    const categories = this.experienceList.querySelectorAll('.exp-category');
+
+    categories.forEach((category) => {
+      const categoryData = category.getAttribute('data-category');
+      
+      if (selectedCategory === 'all' || categoryData === selectedCategory) {
+        category.classList.remove('hidden');
+        // Trigger animation
+        category.style.animation = 'none';
+        setTimeout(() => {
+          category.style.animation = '';
+        }, 10);
+      } else {
+        category.classList.add('hidden');
+      }
+    });
+  }
+}
+
+// ============================================
+// INITIALIZATION UPDATE
+// ============================================
+
+// Update the initialization to include ExperienceFilter
+const originalInit = () => {
+  new ThemeManager();
+  new ScrollAnimations();
+  new AccessibilityManager();
+  new PerformanceOptimizer();
+  new ScrollIndicator();
+  new ExperienceFilter();
+  console.log('Portfolio initialized successfully');
+};
+
+document.addEventListener('DOMContentLoaded', originalInit);

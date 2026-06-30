@@ -108,13 +108,26 @@
   <section id="experience" aria-label="Work experience">
     <div class="section-label">Work History</div>
     <h2 class="section-title">Experience</h2>
-    <div class="exp-list">
+    
+    <!-- Category Filter Dropdown -->
+    <div class="exp-filter-container">
+      <label for="category-filter" class="filter-label">Filter by category:</label>
+      <select id="category-filter" class="category-filter" aria-label="Filter experience by category">
+        <option value="all">All Experience</option>
+        <option value="software-development">💻 Software Development & Tech</option>
+        <option value="travel-hospitality">🏨 Travel & Hospitality Services</option>
+        <option value="operations">🏢 Operations & Client Services</option>
+        <option value="transportation">🚗 Transportation & Mobility</option>
+      </select>
+    </div>
+
+    <div class="exp-list" id="experience-list">
 
       <!-- Software Development & Tech Category -->
-      <div class="exp-category">
+      <div class="exp-category" data-category="software-development">
         <h3 class="exp-category-title">💻 Software Development & Tech</h3>
         
-        <article class="exp-card">
+        <article class="exp-card" data-skills="typescript,react,nodejs,fullstack,architecture">
           <div class="exp-header">
             <h4 class="exp-title">Travel Agent & Founder</h4>
             <span class="exp-period" aria-label="Employment period">Jan 2019 – Present</span>
@@ -130,10 +143,10 @@
       </div>
 
       <!-- Travel & Hospitality Category -->
-      <div class="exp-category">
+      <div class="exp-category" data-category="travel-hospitality">
         <h3 class="exp-category-title">🏨 Travel & Hospitality Services</h3>
         
-        <article class="exp-card">
+        <article class="exp-card" data-skills="hospitality,customer-service,multilingual,luxury-service">
           <div class="exp-header">
             <h4 class="exp-title">Front Desk Associate & Hospitality Coordinator</h4>
             <span class="exp-period" aria-label="Employment period">2007 – 2008</span>
@@ -147,7 +160,7 @@
           </ul>
         </article>
 
-        <article class="exp-card">
+        <article class="exp-card" data-skills="hospitality,quality-assurance,team-leadership,customer-service">
           <div class="exp-header">
             <h4 class="exp-title">Quality & Service Supervisor</h4>
             <span class="exp-period" aria-label="Employment period">2009</span>
@@ -161,7 +174,7 @@
           </ul>
         </article>
 
-        <article class="exp-card">
+        <article class="exp-card" data-skills="travel-planning,customer-service,multilingual,itinerary-management">
           <div class="exp-header">
             <h4 class="exp-title">Travel Agent</h4>
             <span class="exp-period" aria-label="Employment period">Jun 2015 – Present</span>
@@ -173,7 +186,7 @@
           </ul>
         </article>
 
-        <article class="exp-card">
+        <article class="exp-card" data-skills="hospitality,customer-service,team-coordination,international-experience">
           <div class="exp-header">
             <h4 class="exp-title">Crew Steward</h4>
             <span class="exp-period" aria-label="Employment period">Jan 2013 – Oct 2013</span>
@@ -186,10 +199,10 @@
       </div>
 
       <!-- Operations & Client Services Category -->
-      <div class="exp-category">
+      <div class="exp-category" data-category="operations">
         <h3 class="exp-category-title">🏢 Operations & Client Services</h3>
         
-        <article class="exp-card">
+        <article class="exp-card" data-skills="operations,security,client-relations,facilities-management,problem-solving">
           <div class="exp-header">
             <h4 class="exp-title">Concierge & Front Desk Associate</h4>
             <span class="exp-period" aria-label="Employment period">Apr 2023 – Jan 2026</span>
@@ -204,7 +217,7 @@
           </ul>
         </article>
 
-        <article class="exp-card">
+        <article class="exp-card" data-skills="customer-service,multilingual,administrative,client-communication">
           <div class="exp-header">
             <h4 class="exp-title">Bilingual Receptionist</h4>
             <span class="exp-period" aria-label="Employment period">Nov 2013 – Present</span>
@@ -215,7 +228,7 @@
           </ul>
         </article>
 
-        <article class="exp-card">
+        <article class="exp-card" data-skills="quality-assurance,team-training,operations,customer-service">
           <div class="exp-header">
             <h4 class="exp-title">Quality & Service Technician</h4>
             <span class="exp-period" aria-label="Employment period">2008 – 2009</span>
@@ -230,10 +243,10 @@
       </div>
 
       <!-- Transportation & Mobility Category -->
-      <div class="exp-category">
+      <div class="exp-category" data-category="transportation">
         <h3 class="exp-category-title">🚗 Transportation & Mobility</h3>
         
-        <article class="exp-card">
+        <article class="exp-card" data-skills="customer-service,reliability,multilingual,safety">
           <div class="exp-header">
             <h4 class="exp-title">Driver</h4>
             <span class="exp-period" aria-label="Employment period">Jan 2019 – May 2023</span>
